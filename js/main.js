@@ -1,4 +1,39 @@
 (() => {
+  const themeToggles = document.querySelectorAll("[data-theme-toggle]");
+  if (themeToggles.length) {
+    let theme = "light";
+    try {
+      theme = localStorage.getItem("portfolio-theme") === "dark" ? "dark" : "light";
+    } catch (error) {
+      console.error("Unable to read the saved theme preference.", error);
+    }
+
+    const applyTheme = (nextTheme) => {
+      theme = nextTheme;
+      document.documentElement.dataset.theme = theme;
+      const themeColor = document.querySelector('meta[name="theme-color"]');
+      if (themeColor) themeColor.setAttribute("content", theme === "dark" ? "#590D22" : "#fffaf9");
+      themeToggles.forEach((toggle) => {
+        toggle.setAttribute("aria-pressed", String(theme === "dark"));
+        toggle.innerHTML = theme === "dark"
+          ? '<span aria-hidden="true">☀</span> Light'
+          : '<span aria-hidden="true">☾</span> Dark';
+      });
+    };
+
+    applyTheme(theme);
+    themeToggles.forEach((toggle) => {
+      toggle.addEventListener("click", () => {
+        applyTheme(theme === "dark" ? "light" : "dark");
+        try {
+          localStorage.setItem("portfolio-theme", theme);
+        } catch (error) {
+          console.error("Unable to save the theme preference.", error);
+        }
+      });
+    });
+  }
+
   const menuButton = document.querySelector(".menu-toggle");
   const navigation = document.querySelector(".primary-nav");
 
@@ -65,7 +100,21 @@
     updateScrollEffects();
   }
 
-  const revealItems = document.querySelectorAll("[data-reveal]");
+  const revealItems = document.querySelectorAll([
+    "[data-reveal]",
+    ".hero-home .hero-copy > *",
+    ".hero-home .hero-visual",
+    ".page-hero-inner > *",
+    ".inner-section > .section-kicker",
+    ".inner-section > h2",
+    ".inner-section > .inner-copy",
+    ".inner-section .info-card",
+    ".inner-section .education-card",
+    ".inner-section .content-accordion",
+    ".inner-section .studied-subject-group",
+    ".live-site-card",
+    ".contact-end-inner > *"
+  ].join(", "));
   if (revealItems.length && "IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
     document.documentElement.classList.add("motion-ready");
     const observer = new IntersectionObserver((entries, currentObserver) => {
@@ -76,7 +125,11 @@
         }
       });
     }, { threshold: 0.12 });
-    revealItems.forEach((item) => observer.observe(item));
+    revealItems.forEach((item, index) => {
+      item.dataset.reveal = "";
+      item.style.setProperty("--reveal-delay", `${(index % 4) * 70}ms`);
+      observer.observe(item);
+    });
   }
 
   const copyButton = document.querySelector("[data-copy-email]");
