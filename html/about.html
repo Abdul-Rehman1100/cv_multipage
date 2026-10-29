@@ -23,7 +23,8 @@
 <body class="inner-page page-about">
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="scroll-progress" aria-hidden="true"><span></span></div>
-  <aside class="profile-sidebar" aria-label="Profile and contact information">
+  <aside class="profile-sidebar" id="profile-sidebar" aria-label="Profile and contact information">
+    <button class="profile-panel-close" type="button" data-profile-close aria-controls="profile-sidebar" aria-label="Close profile panel">×</button>
     <a class="profile-home-link" href="../index.html" aria-label="Abdul-Rehman, home">
       <span class="profile-portrait"><img src="../images/me.webp" alt="" width="520" height="650"></span>
       <span class="profile-name">Abdul-Rehman</span>
@@ -37,6 +38,7 @@
       <a href="tel:+923285515995"><span aria-hidden="true">☎</span> 03285515995</a>
     </div>
   </aside>
+  <button class="profile-panel-reopen" type="button" data-profile-open aria-controls="profile-sidebar" aria-label="Open profile panel" hidden>Profile <span aria-hidden="true">›</span></button>
   <header class="site-header site-header--dark site-header--inner"><div class="nav-wrap">
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation menu"><span></span><span></span></button>
     <nav class="primary-nav" id="primary-nav" aria-label="Primary navigation">

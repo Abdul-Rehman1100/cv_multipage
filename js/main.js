@@ -34,6 +34,47 @@
     });
   }
 
+  const profileSidebar = document.querySelector("#profile-sidebar");
+  const closeProfileButton = document.querySelector("[data-profile-close]");
+  const openProfileButton = document.querySelector("[data-profile-open]");
+
+  if (profileSidebar && closeProfileButton && openProfileButton) {
+    let profileIsClosed = false;
+    try {
+      profileIsClosed = localStorage.getItem("portfolio-profile-closed") === "true";
+    } catch (error) {
+      console.error("Unable to read the saved profile panel preference.", error);
+    }
+
+    const setProfileClosed = (isClosed) => {
+      profileIsClosed = isClosed;
+      document.documentElement.classList.toggle("profile-is-closed", isClosed);
+      profileSidebar.setAttribute("aria-hidden", String(isClosed));
+      closeProfileButton.hidden = isClosed;
+      openProfileButton.hidden = !isClosed;
+    };
+
+    const saveProfilePreference = () => {
+      try {
+        localStorage.setItem("portfolio-profile-closed", String(profileIsClosed));
+      } catch (error) {
+        console.error("Unable to save the profile panel preference.", error);
+      }
+    };
+
+    setProfileClosed(profileIsClosed);
+    closeProfileButton.addEventListener("click", () => {
+      setProfileClosed(true);
+      saveProfilePreference();
+      openProfileButton.focus();
+    });
+    openProfileButton.addEventListener("click", () => {
+      setProfileClosed(false);
+      saveProfilePreference();
+      closeProfileButton.focus();
+    });
+  }
+
   const menuButton = document.querySelector(".menu-toggle");
   const navigation = document.querySelector(".primary-nav");
 
