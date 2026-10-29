@@ -84,4 +84,46 @@
       }
     });
   }
+
+  const conversationForm = document.querySelector("[data-conversation-form]");
+  const requestEmailLink = document.querySelector("[data-request-email]");
+  const requestStatus = document.querySelector("[data-request-status]");
+  if (conversationForm instanceof HTMLFormElement && requestEmailLink instanceof HTMLAnchorElement && requestStatus) {
+    const dateInput = conversationForm.elements.namedItem("date");
+    if (dateInput instanceof HTMLInputElement) {
+      const today = new Date();
+      const localDate = [today.getFullYear(), String(today.getMonth() + 1).padStart(2, "0"), String(today.getDate()).padStart(2, "0")].join("-");
+      dateInput.min = localDate;
+    }
+
+    conversationForm.addEventListener("input", () => {
+      requestEmailLink.hidden = true;
+      requestEmailLink.removeAttribute("href");
+      requestStatus.textContent = "";
+    });
+
+    conversationForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const formData = new FormData(conversationForm);
+      const name = String(formData.get("name") ?? "").trim();
+      const email = String(formData.get("email") ?? "").trim();
+      const date = String(formData.get("date") ?? "");
+      const time = String(formData.get("time") ?? "");
+      const message = String(formData.get("message") ?? "").trim();
+      const body = [
+        "Hello Abdul-Rehman,",
+        "",
+        "I would like to ask about arranging a conversation.",
+        `Name: ${name}`,
+        `Email: ${email}`,
+        `Preferred date: ${date}`,
+        `Preferred time: ${time}`,
+        message ? `What I would like to discuss: ${message}` : ""
+      ].filter(Boolean).join("\n");
+      const subject = `Conversation request from ${name}`;
+      requestEmailLink.href = `mailto:abdulrehmanmujahid1100@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      requestEmailLink.hidden = false;
+      requestStatus.textContent = "Your request is ready. Open the email draft to send it; no appointment has been booked.";
+    });
+  }
 })();
