@@ -43,99 +43,59 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="scroll-progress" aria-hidden="true"><span></span></div>
-  <header class="site-header site-header--dark">
+  <header class="site-header site-header--dark site-header--home">
     <div class="nav-wrap">
       <a class="brand brand--light" href="index.html" aria-label="Abdul-Rehman, back to top"><span class="brand-wordmark">AR<span class="brand-dot">.</span></span></a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation menu"><span></span><span></span></button>
       <nav class="primary-nav" id="primary-nav" aria-label="Primary navigation">
-        <a href="html/about.html">About</a><a href="index.html#live-sites">Live Sites</a><a href="html/projects.html">Projects</a><a href="html/skills.html">Skills</a><a href="html/education.html">Education</a><a href="html/contact.html">Contact</a>
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="html/about.html">About</a>
+        <a href="html/projects.html#live-sites">Live Sites</a>
+        <a href="html/projects.html">Projects</a>
+        <a href="html/skills.html">Skills</a>
+        <a href="html/education.html">Education</a>
+        <a href="html/contact.html">Contact</a>
       </nav>
-      <a class="nav-cta" href="html/contact.html">Let’s talk <span aria-hidden="true">↗</span></a>
+      <a class="nav-cta" href="me.md" download>Download CV</a>
     </div>
   </header>
 
   <main id="main">
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-orbit hero-orbit--one" aria-hidden="true"></div><div class="hero-orbit hero-orbit--two" aria-hidden="true"></div>
+    <section class="hero hero-home" aria-labelledby="hero-title">
       <div class="hero-grid">
-        <div class="hero-copy" data-reveal>
-          <p class="eyebrow eyebrow--light"><span class="status-dot"></span> BSCS student · Lahore, Pakistan</p>
-          <h1 id="hero-title">I turn everyday<br>frustrations into<br><em>working solutions.</em></h1>
-          <p class="hero-intro">I’m Abdul-Rehman — a computer science student and web developer who likes making technology useful, thoughtful, and easy to use.</p>
-          <div class="hero-actions"><a class="button button--coral" href="html/projects.html">Explore my projects <span aria-hidden="true">↗</span></a><a class="text-link text-link--light" href="html/contact.html">Get in touch <span aria-hidden="true">→</span></a></div>
-          <div class="hero-note"><span class="note-rule"></span><span>Qarshi University <b>·</b> Semester 5</span></div>
+        <div class="hero-copy">
+          <h1 id="hero-title">
+            <span class="hero-greeting">Hey! I’m</span>
+            <span class="hero-name">Abdulrehman.</span>
+          </h1>
+          <p class="hero-quote">“When the why is clear, the how is easy.”</p>
+          <div class="hero-meta" aria-label="Professional summary">
+            <span>BSCS Student</span>
+            <span>/</span>
+            <span>Web Developer</span>
+            <span>/</span>
+            <span>Problem Solver</span>
+          </div>
+          <p class="hero-intro">
+            I build practical web projects around real problems—from file privacy to the timetable clashes that disrupt a new semester.
+          </p>
+          <div class="hero-actions">
+            <a class="button button--coral" href="html/projects.html">Explore my projects <span aria-hidden="true">↗</span></a>
+            <a class="button button--ghost" href="html/contact.html">Get in touch <span aria-hidden="true">↗</span></a>
+          </div>
         </div>
-        <div class="hero-visual" data-reveal data-reveal-delay="120">
-          <div class="portrait-frame"><div class="portrait-topline"><span>FIG. 01 — THE BUILDER</span><span>PK / LHR</span></div><img src="images/me.webp" alt="Portrait of Abdul-Rehman" width="520" height="650" fetchpriority="high"><span class="portrait-index">01</span></div>
-          <span class="float-label float-label--top">BUILD WITH PURPOSE <span>↘</span></span>
-          <span class="float-label float-label--side">WEB / CODE / IDEAS</span>
-          <span class="hero-stamp" aria-hidden="true"><span>MAKE IT</span><span>USEFUL</span><b>✳</b></span>
-        </div>
-      </div>
-      <div class="hero-bottom"><span>SCROLL TO EXPLORE</span><span class="hero-bottom-line"></span><span>01 — 06</span></div>
-    </section>
 
-    <section class="live-sites-section section-pad" id="live-sites" aria-labelledby="live-sites-title">
-      <div class="section-kicker" data-reveal><span>01 / LIVE ON THE WEB</span><span>SELECTED SITES</span></div>
-      <div class="live-sites-heading" data-reveal><div><h2 class="display-heading" id="live-sites-title">A few things,<br><em>out in the world.</em></h2><p>Visit these projects hosted on Vercel. Select a card to open the live website.</p></div><span class="live-sites-index">OPEN / EXTERNAL ↗</span></div>
-      <div class="live-sites-grid">
-        <a class="live-site-card" href="https://aero-throne-website.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Open Aero Throne live website in a new tab" data-reveal>
-          <div class="live-site-preview live-site-preview--aero" aria-hidden="true"><span class="live-site-number">LIVE SITE · 01</span><span class="live-preview-label">LIVE PREVIEW</span><span class="live-preview-monogram">AT<span>✳</span></span><span class="live-preview-rule"></span></div>
-          <div class="live-site-details"><div><h3>Aero Throne</h3><span>aero-throne-website.vercel.app</span></div><span class="live-site-arrow" aria-hidden="true">↗</span></div>
-        </a>
-        <a class="live-site-card" href="https://cit331-lab4-campus-cafe-eta.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Open Campus Cafe live website in a new tab" data-reveal data-reveal-delay="100">
-          <div class="live-site-preview live-site-preview--cafe" aria-hidden="true"><span class="live-site-number">LIVE SITE · 02</span><span class="live-preview-label">LIVE PREVIEW</span><span class="cafe-cup"><i></i></span><span class="cafe-lines"></span></div>
-          <div class="live-site-details"><div><h3>Campus Cafe</h3><span>cit331-lab4-campus-cafe-eta.vercel.app</span></div><span class="live-site-arrow" aria-hidden="true">↗</span></div>
-        </a>
-        <a class="live-site-card" href="https://web-launch-gules.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Open WebLaunch live website in a new tab" data-reveal data-reveal-delay="120">
-          <div class="live-site-preview live-site-preview--launch" aria-hidden="true"><span class="live-site-number">LIVE SITE · 03</span><span class="live-preview-label">LIVE PREVIEW</span><span class="launch-symbol">W<span>↗</span></span><span class="launch-window"></span></div>
-          <div class="live-site-details"><div><h3>WebLaunch</h3><span>web-launch-gules.vercel.app</span></div><span class="live-site-arrow" aria-hidden="true">↗</span></div>
-        </a>
-      </div>
-    </section>
-
-    <section class="intro-section section-pad" aria-labelledby="intro-title">
-      <div class="section-kicker" data-reveal><span>01 / A PRACTICAL MINDSET</span><span>ABOUT THE WORK</span></div>
-      <div class="intro-layout">
-        <h2 class="display-heading" id="intro-title" data-reveal>Curiosity is good.<br><em>Useful curiosity is better.</em></h2>
-        <div class="intro-copy" data-reveal data-reveal-delay="100"><p>From file privacy to timetable clashes, I’m drawn to the small, real problems that can become better experiences with a little code and careful thinking.</p><a class="arrow-link" href="html/about.html">A little more about me <span aria-hidden="true">↗</span></a></div>
-      </div>
-    </section>
-
-    <section class="featured-section" aria-labelledby="featured-title">
-      <div class="section-pad featured-inner">
-        <div class="section-kicker section-kicker--light" data-reveal><span>02 / IN THE WORKSHOP</span><span>ONGOING PROJECTS</span></div>
-        <div class="featured-heading" data-reveal><h2 id="featured-title" class="display-heading display-heading--light">Ideas, meet<br><em>implementation.</em></h2><a class="text-link text-link--light featured-all" href="html/projects.html">All projects <span aria-hidden="true">↗</span></a></div>
-        <div class="featured-projects">
-          <a class="feature-project feature-project--printsafe" href="html/projects.html#printsafe" data-reveal>
-            <div class="project-meta"><span>01 — WEB DEVELOPMENT</span><span class="project-status"><i></i> IN DEVELOPMENT</span></div>
-            <div class="printsafe-art" aria-hidden="true"><div class="file-sheet"><span>PRIVATE FILE</span><b>••••••••••</b><i>LOCAL ONLY</i></div><div class="privacy-seal">YOUR<br>DEVICE<br><strong>✓</strong></div><span class="art-caption">NOTHING LEAVES YOUR DEVICE</span></div>
-            <div class="feature-project-bottom"><div><h3>PrintSafe</h3><p>More transparent, privacy-conscious file processing — designed with local handling in mind.</p></div><span class="round-arrow" aria-hidden="true">↗</span></div>
-          </a>
-          <a class="feature-project feature-project--timetable" href="html/projects.html#timetable" data-reveal data-reveal-delay="100">
-            <div class="project-meta"><span>02 — JAVASCRIPT / SYSTEMS</span><span class="project-status"><i></i> IN DEVELOPMENT</span></div>
-            <div class="timetable-art" aria-hidden="true"><div class="table-label">SEMESTER / 05</div><div class="schedule-grid"><span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span>09:00</span><b></b><i></i><b></b><span>11:00</span><i></i><b></b><span>14:00</span><b></b><i></i></div><span class="table-note">NO CLASHES. MORE CLARITY.</span></div>
-            <div class="feature-project-bottom"><div><h3>Timetable Generator</h3><p>Turning scheduling chaos into a clearer, clash-free university week.</p></div><span class="round-arrow" aria-hidden="true">↗</span></div>
-          </a>
+        <div class="hero-visual" aria-label="Portrait section">
+          <div class="hero-orbit hero-orbit--one" aria-hidden="true"></div>
+          <div class="hero-orbit hero-orbit--two" aria-hidden="true"></div>
+          <div class="portrait-frame">
+            <img src="images/me.webp" alt="Portrait of Abdul-Rehman" width="520" height="650" fetchpriority="high">
+          </div>
         </div>
       </div>
-    </section>
-
-    <section class="path-section section-pad" aria-labelledby="path-title">
-      <div class="section-kicker" data-reveal><span>03 / TAKE A CLOSER LOOK</span><span>THE PORTFOLIO</span></div>
-      <div class="path-layout"><h2 class="display-heading" id="path-title" data-reveal>Learning by<br><em>making things.</em></h2>
-        <div class="path-list" data-reveal data-reveal-delay="100">
-          <a href="html/skills.html"><span class="path-number">01</span><span><b>Tools I’m learning</b><small>Skills, technologies &amp; subjects</small></span><span class="path-arrow">↗</span></a>
-          <a href="html/education.html"><span class="path-number">02</span><span><b>What I’m studying</b><small>Computer science at Qarshi University</small></span><span class="path-arrow">↗</span></a>
-          <a href="html/contact.html"><span class="path-number">03</span><span><b>Let’s make something useful</b><small>Internships, projects &amp; collaboration</small></span><span class="path-arrow">↗</span></a>
-        </div>
-      </div>
+      <button class="scroll-up" type="button" aria-label="Scroll to top">↑</button>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="footer-main"><a class="brand brand--light" href="index.html" aria-label="Abdul-Rehman, back to top"><span class="brand-wordmark">AR<span class="brand-dot">.</span></span></a><p>Building thoughtfully, one problem at a time.</p><a class="footer-email" href="mailto:abdulrehmanmujahid1100@gmail.com">abdulrehmanmujahid1100@gmail.com <span aria-hidden="true">↗</span></a></div>
-    <div class="footer-bottom"><span>© <span data-current-year>2026</span> Abdul-Rehman · Lahore, Pakistan</span><div><a href="html/projects.html">Projects</a><a href="html/contact.html">Contact</a><a href="#main">Back to top ↑</a></div></div>
-  </footer>
 </body>
 </html>

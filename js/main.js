@@ -37,10 +37,19 @@
 
   const header = document.querySelector(".site-header");
   const progress = document.querySelector(".scroll-progress span");
+  const backToTopButton = document.querySelector(".back-to-top");
+  if (backToTopButton) {
+    backToTopButton.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+
   if (header || progress) {
     let ticking = false;
     const updateScrollEffects = () => {
-      if (header) header.classList.toggle("is-scrolled", window.scrollY > 24);
+      if (header && !header.classList.contains("site-header--home")) {
+        header.classList.toggle("is-scrolled", window.scrollY > 24);
+      }
       if (progress) {
         const scrollable = document.documentElement.scrollHeight - window.innerHeight;
         progress.style.transform = `scaleX(${scrollable > 0 ? window.scrollY / scrollable : 0})`;
